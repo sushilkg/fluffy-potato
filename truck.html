@@ -6,6 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSS Truck</title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
     <style>
         .truck_container {
             position: relative;
@@ -70,11 +74,19 @@
             width: 50px;
             height: 50px;
             border-radius: 50px;
-            animation: spin 4s infinite linear;
+            animation: goRight 4s infinite linear;
         }
 
-        @keyframes spin {
-            100% {transform: rotate(360deg);}
+        @keyframes goRight {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes goLeft {
+            100% {
+                transform: rotate(-360deg);
+            }
         }
 
         .truck_front_wheel {
@@ -94,6 +106,27 @@
             height: 50px;
         }
     </style>
+    <script>
+        $(document).keydown(function (event) {
+            switch (event.keyCode) {
+                case 37:
+                    changeDirection("left");
+                    break;
+                case 39:
+                    changeDirection("right");
+                    break;
+            }
+        });
+
+        function changeDirection(direction) {
+            $('.truck_wheel').each(function () {
+                if (direction === "right")
+                    $(this).css('animation', "goRight 4s infinite linear");
+                else
+                    $(this).css('animation', "goLeft 4s infinite linear");
+            });
+        }
+    </script>
 </head>
 <body>
 <div class="truck_container">
