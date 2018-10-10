@@ -74,6 +74,15 @@
         .truck_back_wheel {
             left: 50px;
         }
+
+        .truck_spoke {
+            background: #FFFFFF;
+            position: absolute;
+            left: 25px;
+            top: 0;
+            width: 5px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
@@ -88,8 +97,12 @@
             <div class="truck_horizontal_base"></div>
         </div>
         <div class="truck_wheels">
-            <div class="truck_wheel truck_front_wheel"></div>
-            <div class="truck_wheel truck_back_wheel"></div>
+            <div class="truck_wheel truck_front_wheel">
+                <div class="truck_spoke"></div>
+            </div>
+            <div class="truck_wheel truck_back_wheel">
+                <div class="truck_spoke"></div>
+            </div>
         </div>
     </div>
 </div>
