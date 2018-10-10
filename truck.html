@@ -12,10 +12,29 @@
             crossorigin="anonymous"></script>
     <style>
         .truck_container {
-            position: relative;
+            position: absolute;
+            left: 0;
             width: 400px;
             height: 400px;
-            margin: 0 auto;
+            animation: goRight 30s infinite linear normal;
+        }
+
+        @keyframes goRight {
+            from {
+                margin-left: -20%
+            }
+            to {
+                margin-left: 105%
+            }
+        }
+
+        @keyframes goLeft {
+            from {
+                margin-left: 105%
+            }
+            to {
+                margin-left: -20%
+            }
         }
 
         .truck_body {
@@ -74,16 +93,16 @@
             width: 50px;
             height: 50px;
             border-radius: 50px;
-            animation: goRight 4s infinite linear;
+            animation: rotateRight 4s infinite linear;
         }
 
-        @keyframes goRight {
+        @keyframes rotateRight {
             100% {
                 transform: rotate(360deg);
             }
         }
 
-        @keyframes goLeft {
+        @keyframes rotateLeft {
             100% {
                 transform: rotate(-360deg);
             }
@@ -120,10 +139,13 @@
 
         function changeDirection(direction) {
             $('.truck_wheel').each(function () {
-                if (direction === "right")
-                    $(this).css('animation', "goRight 4s infinite linear");
-                else
-                    $(this).css('animation', "goLeft 4s infinite linear");
+                if (direction === "right") {
+                    $(this).css('animation', "rotateRight 4s infinite linear");
+                    $('.truck_container').css('animation', "goRight 30s infinite linear normal");
+                } else {
+                    $(this).css('animation', "rotateLeft 4s infinite linear");
+                    $('.truck_container').css('animation', "goLeft 30s infinite linear normal");
+                }
             });
         }
     </script>
