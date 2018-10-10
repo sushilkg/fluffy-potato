@@ -6,6 +6,23 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSS Truck</title>
+    <style>
+        .truck_container {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .truck_body {
+            background: #EEEFEE;
+            position: absolute;
+            left: 100px;
+            top: 200px;
+            width: 300px;
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
 <div class="truck_container">
@@ -13,8 +30,8 @@
         <div class="truck_text">Hello Customer</div>
     </div>
     <div class="truck_chassis">
-        <div class="truck_base"></div>
         <div class="truck_head"></div>
+        <div class="truck_base"></div>
         <div class="truck_wheels">
             <div class="truck_front_wheels"></div>
             <div class="truck_back_wheels"></div>
