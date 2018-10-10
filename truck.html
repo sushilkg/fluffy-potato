@@ -17,9 +17,37 @@
         .truck_body {
             background: #EEEFEE;
             position: absolute;
-            left: 100px;
+            left: 0;
             top: 200px;
             width: 300px;
+            height: 150px;
+        }
+
+        .truck_head {
+            background: #B4DBEC;
+            position: absolute;
+            left: 250px;
+            top: 200px;
+            width: 200px;
+            height: 200px;
+            border-radius: 200px;
+        }
+
+        .truck_horizontal_base {
+            background: #C1E900;
+            position: absolute;
+            left: 0;
+            top: 350px;
+            width: 400px;
+            height: 50px;
+        }
+
+        .truck_vertical_base {
+            background: #C1E900;
+            position: absolute;
+            left: 300px;
+            top: 200px;
+            width: 50px;
             height: 200px;
         }
     </style>
@@ -31,7 +59,10 @@
     </div>
     <div class="truck_chassis">
         <div class="truck_head"></div>
-        <div class="truck_base"></div>
+        <div class="truck_base">
+            <div class="truck_vertical_base"></div>
+            <div class="truck_horizontal_base"></div>
+        </div>
         <div class="truck_wheels">
             <div class="truck_front_wheels"></div>
             <div class="truck_back_wheels"></div>
