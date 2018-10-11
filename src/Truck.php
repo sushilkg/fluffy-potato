@@ -10,4 +10,9 @@ class Truck
     {
         $this->truckText = $text;
     }
+
+    public function getText()
+    {
+        return $this->truckText;
+    }
 }
