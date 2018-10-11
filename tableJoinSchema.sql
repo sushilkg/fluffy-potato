@@ -18,7 +18,7 @@ CREATE TABLE `sale_order_item` (
   `item_id`     INT NOT NULL,
   `order_id`    INT NOT NULL,
   `name`        VARCHAR(256) NOT NULL,
-  `total_amout` FLOAT NOT NULL
+  `total_amount` FLOAT NOT NULL
 );
 
 INSERT INTO `customer`
