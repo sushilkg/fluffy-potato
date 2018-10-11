@@ -6,5 +6,8 @@
             "email": "desushil@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {"App\\": "src/"}
+    }
 }
