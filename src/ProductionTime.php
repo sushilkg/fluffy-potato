@@ -29,7 +29,7 @@ class ProductionTime
         if (self::isWorkingDate($team, $date)) {
             return $date;
         } else {
-            return self::getNextWorkingDate($team, $date + "one day");
+            return self::getNextWorkingDate($team, self::addDaysToDate($date, 1));
         }
     }
 
@@ -47,7 +47,7 @@ class ProductionTime
                 break;
         }
 
-        return $holiday;
+        return !$holiday;
     }
 
     protected static function isHoliday(string $date): bool
@@ -72,16 +72,28 @@ class ProductionTime
 
     public static function productionCompletionDate(string $order_date): string
     {
-        $production_happening_date  = self::getNextWorkingDate("production", $order_date);
-        $production_completion_date = self::addDaysToDate($production_happening_date, 1);
+        if (self::isWorkingDate("production", $order_date)) {
+            $production_happening_date  = self::addDaysToDate($order_date, 1);
+            $production_completion_date = self::getNextWorkingDate("production", $production_happening_date);
+        } else {
+            $production_start_date      = self::getNextWorkingDate("production", $order_date);
+            $production_happening_date  = self::addDaysToDate($production_start_date, 1);
+            $production_completion_date = self::getNextWorkingDate("production", $production_happening_date);
+        }
 
         return $production_completion_date;
     }
 
-    public static function shippingCompletionDate(string $production_completion_date): string
+    public static function shippingCompletionDate(string $production_date): string
     {
-        $shipping_happening_date  = self::getNextWorkingDate("shipping", $production_completion_date);
-        $shipping_completion_date = self::addDaysToDate($shipping_happening_date, 1);
+        if (self::isWorkingDate("shipping", $production_date)) {
+            $shipping_happening_date  = self::addDaysToDate($production_date, 1);
+            $shipping_completion_date = self::getNextWorkingDate("shipping", $shipping_happening_date);
+        } else {
+            $shipping_start_date = self::getNextWorkingDate("shipping", $production_date);
+            $shipping_happening_date  = self::addDaysToDate($shipping_start_date, 1);
+            $shipping_completion_date = self::getNextWorkingDate("shipping", $shipping_happening_date);
+        }
 
         return $shipping_completion_date;
     }
