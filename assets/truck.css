@@ -1,0 +1,114 @@
+.truck_container {
+    position: absolute;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    animation: goRight 30s infinite linear normal;
+}
+
+@keyframes goRight {
+    from {
+        margin-left: -20%
+    }
+    to {
+        margin-left: 105%
+    }
+}
+
+@keyframes goLeft {
+    from {
+        margin-left: 105%
+    }
+    to {
+        margin-left: -20%
+    }
+}
+
+.truck_body {
+    background: #EEEFEE;
+    position: absolute;
+    left: 0;
+    top: 200px;
+    width: 275px;
+    height: 180px;
+}
+
+.truck_text {
+    padding: 50px;
+    font-size: 36px;
+}
+
+.truck_head {
+    background: #B4DBEC;
+    position: absolute;
+    left: 280px;
+    top: 240px;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+}
+
+.truck_horizontal_base {
+    background: #C1E900;
+    position: absolute;
+    left: 0;
+    top: 380px;
+    width: 400px;
+    height: 20px;
+}
+
+.truck_vertical_base {
+    background: #C1E900;
+    position: absolute;
+    left: 280px;
+    top: 240px;
+    width: 65px;
+    height: 150px;
+}
+
+.truck_wheels_container {
+    top: 390px;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    z-index: -1;
+}
+
+.truck_wheel {
+    background: #B2B3B2;
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    animation: rotateRight 4s infinite linear;
+}
+
+@keyframes rotateRight {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateLeft {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.truck_front_wheel {
+    left: 280px;
+}
+
+.truck_back_wheel {
+    left: 50px;
+}
+
+.truck_spoke {
+    background: #FFFFFF;
+    position: absolute;
+    left: 25px;
+    top: 0;
+    width: 5px;
+    height: 50px;
+}
