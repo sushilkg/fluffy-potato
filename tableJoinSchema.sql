@@ -15,10 +15,10 @@ CREATE TABLE `sale_order` (
 
 DROP TABLE IF EXISTS `sale_order_item`;
 CREATE TABLE `sale_order_item` (
-  `item_id`     INT NOT NULL,
-  `order_id`    INT NOT NULL,
-  `name`        VARCHAR(256) NOT NULL,
-  `total_amount` FLOAT NOT NULL
+  `item_id`      INT          NOT NULL,
+  `order_id`     INT          NOT NULL,
+  `name`         VARCHAR(256) NOT NULL,
+  `total_amount` FLOAT        NOT NULL
 );
 
 INSERT INTO `customer`

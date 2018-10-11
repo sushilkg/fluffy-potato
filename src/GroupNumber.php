@@ -8,10 +8,11 @@ class GroupNumber
     {
         $numbers = [];
         for ($i = 1; $i <= 500; $i++) {
-            if($i % $group_number === 0) {
+            if ($i % $group_number === 0) {
                 $numbers[] = $i;
             }
         }
+
         return $numbers;
     }
 }
