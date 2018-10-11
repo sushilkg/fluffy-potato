@@ -16,7 +16,7 @@ class ProductionTime
         "2018-05-01"
     ];
 
-    public static function Delivery($order_date)
+    public static function Delivery(string $order_date): string
     {
         $production_date = $order_date + self::getNextWorkingDate("production", $order_date + "one date");
         $delivery_date   = $production_date + self::getNextWorkingDate("shipping", $order_date + "one date");;
@@ -24,7 +24,7 @@ class ProductionTime
         return $delivery_date;
     }
 
-    protected static function getNextWorkingDate($team, $date)
+    protected static function getNextWorkingDate(string $team, string $date): string
     {
         if (self::isWorkingDate($team, $date)) {
             return $date;
@@ -33,7 +33,7 @@ class ProductionTime
         }
     }
 
-    protected static function isWorkingDate($team, $date)
+    protected static function isWorkingDate(string $team, string $date): bool
     {
         switch ($team) {
             case "production":
@@ -50,17 +50,17 @@ class ProductionTime
         return $holiday;
     }
 
-    protected static function isHoliday($date)
+    protected static function isHoliday(string $date): bool
     {
         return in_array($date, self::$holidays);
     }
 
-    protected static function isSaturday($date)
+    protected static function isSaturday(string $date): bool
     {
         return (date('N', strtotime($date)) == 6);
     }
 
-    protected static function isSunday($date)
+    protected static function isSunday(string $date): bool
     {
         return (date('N', strtotime($date)) == 7);
     }
