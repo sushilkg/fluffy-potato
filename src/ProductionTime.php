@@ -18,10 +18,10 @@ class ProductionTime
 
     public static function Delivery(string $order_date): string
     {
-        $production_date = $order_date + self::getNextWorkingDate("production", $order_date + "one date");
-        $delivery_date   = $production_date + self::getNextWorkingDate("shipping", $order_date + "one date");;
+        $production_completion_date = self::productionCompletionDate($order_date);
+        $shipping_completion_date   = self::shippingCompletionDate($production_completion_date);
 
-        return $delivery_date;
+        return $shipping_completion_date;
     }
 
     protected static function getNextWorkingDate(string $team, string $date): string
@@ -63,5 +63,26 @@ class ProductionTime
     protected static function isSunday(string $date): bool
     {
         return (date('N', strtotime($date)) == 7);
+    }
+
+    protected static function addDaysToDate(string $date, string $daysToAdd): string
+    {
+        return date('Y-m-d', strtotime("$date + $daysToAdd days"));
+    }
+
+    public static function productionCompletionDate(string $order_date): string
+    {
+        $production_happening_date  = self::getNextWorkingDate("production", $order_date);
+        $production_completion_date = self::addDaysToDate($production_happening_date, 1);
+
+        return $production_completion_date;
+    }
+
+    public static function shippingCompletionDate(string $production_completion_date): string
+    {
+        $shipping_happening_date  = self::getNextWorkingDate("shipping", $production_completion_date);
+        $shipping_completion_date = self::addDaysToDate($shipping_happening_date, 1);
+
+        return $shipping_completion_date;
     }
 }
