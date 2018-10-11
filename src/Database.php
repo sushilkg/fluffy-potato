@@ -4,7 +4,7 @@ namespace App;
 
 class Database
 {
-    public static $connection = false;
+    public static $connection = null;
 
     public function __construct()
     {
@@ -39,9 +39,9 @@ class Database
         return self::$connection;
     }
 
-    public function query($sql) {
+    public function query($sql, $method = \PDO::FETCH_ASSOC) {
         try {
-            return self::$connection->query($sql);
+            return self::$connection->query($sql, $method);
         } catch (\PDOException $exception) {
             throw $exception;
         }
