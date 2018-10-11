@@ -1,8 +1,13 @@
 <?php
+
+namespace App;
+
 class Truck
 {
+    protected $truckText;
+
     protected function setText($text)
     {
-        // set text here
+        $this->truckText = $text;
     }
 }
