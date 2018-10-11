@@ -3,24 +3,15 @@
     left: 0;
     width: 400px;
     height: 400px;
-    animation: goRight 30s infinite linear normal;
+    animation: moveTruck 30s infinite linear normal;
 }
 
-@keyframes goRight {
+@keyframes moveTruck {
     from {
         margin-left: -20%
     }
     to {
         margin-left: 105%
-    }
-}
-
-@keyframes goLeft {
-    from {
-        margin-left: 105%
-    }
-    to {
-        margin-left: -20%
     }
 }
 
