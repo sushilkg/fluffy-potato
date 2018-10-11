@@ -1,9 +1,11 @@
 Question numbers mapping with related files.
 
-Question 1. `truck.html`
+\#1, \#2. `truck.html`, `assets/truck.css` & `assets/truck.js`
 
-Question 2. `truck.php`, `src/Truck.php` & `src/TruckCopy.php`
+\#3. `truck.php`, `src/Truck.php` & `src/TruckCopy.php`
 
-Question 3. `group.php`, `src/GroupNumber.php`
+\#4. `group.php`, `src/GroupNumber.php`
 
-Question 4. `productionTime.php`, `src/ProductionTime.php`
+\#5. `productionTime.php`, `src/ProductionTime.php`
+
+\#6. `productionTime.php`, `src/ProductionTime.php`
