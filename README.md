@@ -1,4 +1,4 @@
-Question numbers mapping with related files.
+Questions' number mapping with related files.
 
 \#1, \#2. `truck.html`, `assets/truck.css` & `assets/truck.js`
 
@@ -8,4 +8,4 @@ Question numbers mapping with related files.
 
 \#5. `productionTime.php`, `src/ProductionTime.php`
 
-\#6. `productionTime.php`, `src/ProductionTime.php`
+\#6. `tableJoin.php`, `tableJoinSchema.sql`,`src/TableJoin.php`
