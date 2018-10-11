@@ -8,4 +8,4 @@ Questions' number mapping with related files.
 
 \#5. `productionTime.php`, `src/ProductionTime.php`
 
-\#6. `tableJoin.php`, `tableJoinSchema.sql`,`src/TableJoin.php`
+\#6. `tableJoin.php`, `tableJoinSchema.sql`,`src/TableJoin.php` & `src/Database.php`
