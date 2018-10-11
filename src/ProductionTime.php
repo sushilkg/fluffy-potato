@@ -90,7 +90,7 @@ class ProductionTime
             $shipping_happening_date  = self::addDaysToDate($production_date, 1);
             $shipping_completion_date = self::getNextWorkingDate("shipping", $shipping_happening_date);
         } else {
-            $shipping_start_date = self::getNextWorkingDate("shipping", $production_date);
+            $shipping_start_date      = self::getNextWorkingDate("shipping", $production_date);
             $shipping_happening_date  = self::addDaysToDate($shipping_start_date, 1);
             $shipping_completion_date = self::getNextWorkingDate("shipping", $shipping_happening_date);
         }
