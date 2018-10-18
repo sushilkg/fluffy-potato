@@ -11,4 +11,6 @@ Questions' number mapping with related files.
 
 \#5. `productionTime.php`, `src/ProductionTime.php`
 
-\#6. `tableJoin.php`, `tableJoinSchema.sql`,`src/TableJoin.php` & `src/Database.php`
+\#6. `tableJoin.php`, `src/TableJoin.php` & `src/Database.php`.
+
+Please copy the `.env.sample` file to `.env` and fill the database configuration values (create database if not already existss) and execute `tableJoinSchema.sql` file to populate the database for \#6 to work. 
