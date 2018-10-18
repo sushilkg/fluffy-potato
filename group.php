@@ -13,8 +13,8 @@ $group_5  = $group_number->getGroupNumber(5);
 $group_3  = $group_number->getGroupNumber(3);
 
 echo "<pre>";
-print_r('Group#20: '.implode(',', $group_20) . "<br />");
-print_r('Group#15: '.implode(',', $group_15) . "<br />");
-print_r('Group#9: '.implode(',', $group_9) . "<br />");
-print_r('Group#5: '.implode(',', $group_5) . "<br />");
-print_r('Group#3: '.implode(',', $group_3) . "<br />");
+print_r('Group#20: '.implode(',', $group_20)."<br />");
+print_r('Group#15: '.implode(',', $group_15)."<br />");
+print_r('Group#9: '.implode(',', $group_9)."<br />");
+print_r('Group#5: '.implode(',', $group_5)."<br />");
+print_r('Group#3: '.implode(',', $group_3)."<br />");
