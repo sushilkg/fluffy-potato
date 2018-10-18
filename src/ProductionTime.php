@@ -16,6 +16,9 @@ class ProductionTime
         "2018-05-01"
     ];
 
+    const SHIPPING_TIME_IN_DAYS = 1;
+    const PRODUCTION_TIME_IN_DAYS = 1;
+
     public static function Delivery(string $order_date): string
     {
         $production_completion_date = self::productionCompletionDate($order_date);
@@ -73,7 +76,7 @@ class ProductionTime
     public static function productionCompletionDate(string $order_date): string
     {
         $production_start_date      = self::getNextWorkingDate("production", $order_date);
-        $production_happening_date  = self::addDaysToDate($production_start_date, 1);
+        $production_happening_date  = self::addDaysToDate($production_start_date, self::PRODUCTION_TIME_IN_DAYS);
         $production_completion_date = self::getNextWorkingDate("production", $production_happening_date);
 
         return $production_completion_date;
@@ -82,7 +85,7 @@ class ProductionTime
     public static function shippingCompletionDate(string $production_date): string
     {
         $shipping_start_date      = self::getNextWorkingDate("shipping", $production_date);
-        $shipping_happening_date  = self::addDaysToDate($shipping_start_date, 1);
+        $shipping_happening_date  = self::addDaysToDate($shipping_start_date, self::SHIPPING_TIME_IN_DAYS);
         $shipping_completion_date = self::getNextWorkingDate("shipping", $shipping_happening_date);
 
         return $shipping_completion_date;
