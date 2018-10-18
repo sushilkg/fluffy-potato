@@ -6,7 +6,9 @@
             "email": "desushil@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "vlucas/phpdotenv": "^2.5"
+    },
     "autoload": {
         "psr-4": {"App\\": "src/"}
     },
